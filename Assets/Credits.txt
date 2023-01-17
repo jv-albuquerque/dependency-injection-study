@@ -1,0 +1,10 @@
+Credits
+
+Sprites assets: 
+https://comp3interactive.itch.io/invaders-from-outerspace-full-project-asset-pack
+
+SFX:
+https://opengameart.org/content/512-sound-effects-8-bit-style
+
+Font:
+https://www.1001fonts.com/pixel-font.html
