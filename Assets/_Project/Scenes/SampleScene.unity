@@ -719,7 +719,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 3107897721679478466, guid: 17e0db83e810a4492b6c585348b697c7, type: 3}
-  shootOffset: 0.2
+  shootOffset: 0
 --- !u!1 &1708952362
 GameObject:
   m_ObjectHideFlags: 0
