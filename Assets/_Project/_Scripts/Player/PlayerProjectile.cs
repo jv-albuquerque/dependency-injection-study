@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Major.SpaceInvaders.Enemy;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -25,6 +26,11 @@ namespace Major.SpaceInvaders.Player
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
+            if(collision.CompareTag("Enemy"))
+            {
+                collision.GetComponent<EnemyController>().Kill();
+            }
+
             Release();
         }
 
