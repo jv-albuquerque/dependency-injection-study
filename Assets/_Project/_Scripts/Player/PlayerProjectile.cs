@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Major.SpaceInvaders.Core;
 using Major.SpaceInvaders.Enemy;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -28,7 +29,7 @@ namespace Major.SpaceInvaders.Player
         {
             if(collision.CompareTag("Enemy"))
             {
-                collision.GetComponent<EnemyController>().Kill();
+                collision.GetComponent<IHittable>().Hit();
             }
 
             Release();
