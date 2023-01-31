@@ -15,6 +15,6 @@ namespace Major.SpaceInvaders.Enemy
         public void Hit()
         {
             Kill();
-        }
+        }   
     }
 }
