@@ -100,4 +100,4 @@ MonoBehaviour:
   _speed: 12
   _layersToHit:
     serializedVersion: 2
-    m_Bits: 129
+    m_Bits: 385

@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 126715857}
   m_Layer: 0
   m_Name: Up Bound
-  m_TagString: Untagged
+  m_TagString: Bound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -331,7 +331,7 @@ GameObject:
   - component: {fileID: 656165811}
   m_Layer: 0
   m_Name: Right Bound
-  m_TagString: Untagged
+  m_TagString: Bound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -396,7 +396,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 656165807}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.99, y: -0.14, z: 0}
+  m_LocalPosition: {x: 3, y: -0.14, z: 0}
   m_LocalScale: {x: 1, y: 7.508638, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -733,7 +733,7 @@ GameObject:
   - component: {fileID: 1708952366}
   m_Layer: 0
   m_Name: Left Bound
-  m_TagString: Untagged
+  m_TagString: Bound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -798,7 +798,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1708952362}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.02, y: -0.1, z: 0}
+  m_LocalPosition: {x: -3, y: -0.1, z: 0}
   m_LocalScale: {x: 1, y: 7.508638, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -895,12 +895,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adabd561eb0f2459cbda87cc112dd50b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 5405408070074093745, guid: ffbb9422a910341dcbc5c8bbdc0b117f, type: 3}
-  nLines: 6
-  nColumns: 10
-  horizontalOffset: 0.4
-  verticalOffset: -0.25
-  firstPos: {x: -1.8, y: 2.25}
+  _enemyPrefab: {fileID: 5405408070074093758, guid: ffbb9422a910341dcbc5c8bbdc0b117f, type: 3}
+  _nLines: 6
+  _nColumns: 10
+  _horizontalOffset: 0.4
+  _verticalOffset: -0.25
+  _firstPos: {x: -2.4, y: 3}
 --- !u!114 &1823605988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -913,6 +913,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50946e6f7fad94496abd51dd28efd99b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _moveX: 0.4
+  _moveY: 0.25
+  _startMoveDelay: 1
 --- !u!4 &1823605989
 Transform:
   m_ObjectHideFlags: 0
