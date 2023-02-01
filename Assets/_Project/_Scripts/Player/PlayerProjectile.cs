@@ -11,28 +11,41 @@ namespace Major.SpaceInvaders.Player
     {
         public event System.Action OnDestroyed;
 
-        [SerializeField] private float speed = 10f;
+        [SerializeField] private float _speed = 10f;
+        [SerializeField] private LayerMask _layersToHit;
 
-        private Rigidbody2D rb;
+        private Vector2 _direction = Vector2.up;
 
-        private void Awake()
+        private float _moveDistance;
+
+        private void FixedUpdate()
         {
-            rb = GetComponent<Rigidbody2D>();
-        }
+            _moveDistance = _speed * Time.fixedDeltaTime;
 
-        private void Start()
-        {
-            rb.velocity = Vector2.up * speed;
-        }
-
-        private void OnTriggerEnter2D(Collider2D collision)
-        {
-            if(collision.CompareTag("Enemy"))
+            if (!VerifyCollition())
             {
-                collision.GetComponent<IHittable>().Hit();
+                Move();
+            }
+        }
+
+        private bool VerifyCollition()
+        {
+            var hits = Physics2D.RaycastAll(transform.position, _direction, _moveDistance, _layersToHit);
+
+            if(hits.Length > 0)
+            {
+                hits[0].collider.GetComponent<IHittable>()?.Hit();
+                transform.position = hits[0].transform.position;
+                Release();
+                return true;
             }
 
-            Release();
+            return false;
+        }
+
+        private void Move()
+        {
+            transform.position += (Vector3)(_moveDistance * _direction);
         }
 
         private void Release()
