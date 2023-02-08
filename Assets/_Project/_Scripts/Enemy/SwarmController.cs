@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,8 @@ namespace Major.SpaceInvaders.Enemy
         [SerializeField] private float _moveX = 0.3f;
         [SerializeField] private float _moveY = 0.25f;
         [SerializeField] private float _startMoveDelay = 1.0f;
+
+        public event Action OnMove;
 
         private bool _goingLeft = true;
         private bool _goDown = false;
@@ -46,6 +49,7 @@ namespace Major.SpaceInvaders.Enemy
                 newPosition.x += _moveX * (_goingLeft ? -1 : 1);
             }
             transform.position = newPosition;
+            OnMove?.Invoke();
         }
 
         public void OnHitLimits()

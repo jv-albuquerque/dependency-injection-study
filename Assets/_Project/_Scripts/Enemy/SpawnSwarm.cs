@@ -7,9 +7,8 @@ namespace Major.SpaceInvaders.Enemy
 {
     public class SpawnSwarm : MonoBehaviour
     {
-        [SerializeField] private EnemyController _enemyPrefab;
+        [SerializeField] private List<EnemyController> _lineEnemyPrefab;
         [Space]
-        [SerializeField] private int _nLines = 6;
         [SerializeField] private int _nColumns = 10;
         [Space]
         [SerializeField] private float _horizontalOffset = 0.4f;
@@ -27,20 +26,20 @@ namespace Major.SpaceInvaders.Enemy
 
         private void SpawnMatrix()
         {
-            for (int line = 0; line < _nLines; line++)
+            for (int line = 0; line < _lineEnemyPrefab.Count; line++)
             {
                 for (int column = 0; column < _nColumns; column++)
                 {
-                    Spawn(_firstPos + new Vector2(column * _horizontalOffset, line * _verticalOffset));
+                    Spawn(_lineEnemyPrefab[line], _firstPos + new Vector2(column * _horizontalOffset, line * _verticalOffset));
                 }
             }
         }
 
-        private void Spawn(Vector2 position)
+        private void Spawn(EnemyController prefab, Vector2 position)
         {
-            var enemy = Instantiate(_enemyPrefab, transform);
+            var enemy = Instantiate(prefab, transform);
             enemy.transform.position = position;
-            enemy.SetController(_swarmController);
+            enemy.Set(_swarmController);
         }
     }
 }

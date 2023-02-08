@@ -895,8 +895,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adabd561eb0f2459cbda87cc112dd50b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyPrefab: {fileID: 5405408070074093758, guid: ffbb9422a910341dcbc5c8bbdc0b117f, type: 3}
-  _nLines: 6
+  _lineEnemyPrefab:
+  - {fileID: 2270908398565463670, guid: f68f5fc0eac184e7c9d354f658337900, type: 3}
+  - {fileID: 3238593021002368926, guid: 6fc7d2d58f0474622abf49ac63b3910f, type: 3}
+  - {fileID: 6998122479959909608, guid: c872f2c97988443f8982eea942d0da30, type: 3}
+  - {fileID: 1920249542171543823, guid: d8cde33ebb1d44e8f8490d33c970e9cd, type: 3}
+  - {fileID: 5405408070074093758, guid: ffbb9422a910341dcbc5c8bbdc0b117f, type: 3}
+  - {fileID: 5405408070074093758, guid: ffbb9422a910341dcbc5c8bbdc0b117f, type: 3}
   _nColumns: 10
   _horizontalOffset: 0.4
   _verticalOffset: -0.25
