@@ -26,20 +26,26 @@ namespace Major.SpaceInvaders.Enemy
 
         private void SpawnMatrix()
         {
+            List<EnemyController> enemies = new List<EnemyController>();
             for (int line = 0; line < _lineEnemyPrefab.Count; line++)
             {
                 for (int column = 0; column < _nColumns; column++)
                 {
-                    Spawn(_lineEnemyPrefab[line], _firstPos + new Vector2(column * _horizontalOffset, line * _verticalOffset));
+                    var enemy = Spawn(_lineEnemyPrefab[line], _firstPos + new Vector2(column * _horizontalOffset, line * _verticalOffset));
+                    enemies.Add(enemy);
                 }
             }
+
+            _swarmController.RegisterEnemiesList(enemies);
         }
 
-        private void Spawn(EnemyController prefab, Vector2 position)
+        private EnemyController Spawn(EnemyController prefab, Vector2 position)
         {
             var enemy = Instantiate(prefab, transform);
             enemy.transform.position = position;
             enemy.Set(_swarmController);
+
+            return enemy;
         }
     }
 }

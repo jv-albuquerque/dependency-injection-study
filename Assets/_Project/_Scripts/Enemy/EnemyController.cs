@@ -30,6 +30,7 @@ namespace Major.SpaceInvaders.Enemy
 
         public void Kill()
         {
+            _swarmController.OnEnemyDie(this);
             Destroy(gameObject);
         }
 

@@ -7,8 +7,10 @@ namespace Major.SpaceInvaders.Enemy
 {
     public interface ISwarmController
     {
-        public event Action OnMove;
+        event Action OnMove;
 
+        void RegisterEnemiesList(List<EnemyController> list);
+        void OnEnemyDie(EnemyController enemy);
         void OnHitLimits();
     }
 }
